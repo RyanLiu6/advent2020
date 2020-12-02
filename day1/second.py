@@ -16,7 +16,7 @@ def solution():
     In this list, the three entries that sum to 2020 are 979, 366, and 675. Multiplying them together produces the answer, 241861950.
     """
     nums = []
-    with open(os.path.join(os.path.abspath(os.getcwd()), "first.txt")) as read_file:
+    with open(os.path.join(os.path.abspath(os.getcwd()), "input.txt")) as read_file:
         for line in read_file:
             nums.append(int(line))
 
