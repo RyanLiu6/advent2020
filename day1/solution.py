@@ -2,7 +2,6 @@ import os
 
 def part_one():
     custom_sum = CustomSum()
-    custom_sum.parse_input()
 
     (num_1, num_2) = custom_sum.two_sum(target=2020)
     print(num_1, num_2)
@@ -11,7 +10,6 @@ def part_one():
 
 def part_two():
     custom_sum = CustomSum()
-    custom_sum.parse_input()
 
     (num_1, num_2, num_3) = custom_sum.three_sum(target=2020)
 
@@ -21,6 +19,9 @@ def part_two():
 
 
 class CustomSum:
+    def __init__(self):
+        self.parse_input()
+
     def two_sum(self, target):
         # Guaranteed to find a counterpart
         for num in self.nums:
