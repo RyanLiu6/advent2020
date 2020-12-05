@@ -1,11 +1,11 @@
-from first import solution as first_solution
-from second import solution as second_solution
+from solution import part_one, part_two
+
 
 if __name__ == "__main__":
-    result = first_solution()
+    result = part_one()
 
     print(result)
 
-    result = second_solution()
+    result = part_two()
 
     print(result)
