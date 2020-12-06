@@ -88,7 +88,7 @@ class BoardingPass:
 
         self._process_data()
 
-    def _process_data(self):
+    def _process_data_naive(self):
         # First seven describe row
         for i in range(7):
             val = self.string[i]
@@ -108,6 +108,28 @@ class BoardingPass:
         # At this point row_start == row_end and column_start == column_end
         self.row = self.row_end
         self.column = self.column_end
+
+    def _process_data(self):
+        # First seven describe row
+        processed_string = ""
+        for i in range(7):
+            val = self.string[i]
+            if val == self.F:
+                processed_string += "0"
+            else:
+                processed_string += "1"
+
+        # Next three describe column
+        for i in range(3):
+            val = self.string[i + 7]
+            if val == self.L:
+                processed_string += "0"
+            else:
+                processed_string += "1"
+
+        # At this point row_start == row_end and column_start == column_end
+        self.row = int(processed_string[:7], 2)
+        self.column = int(processed_string[7:], 2)
 
     def get_seat_id(self):
         return BoardingPass.calculate_seat_id(self.row, self.column)
