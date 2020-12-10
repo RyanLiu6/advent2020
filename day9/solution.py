@@ -1,5 +1,4 @@
 import os
-import enum
 
 def part_one():
     custom_encoding = CustomEncoding()
